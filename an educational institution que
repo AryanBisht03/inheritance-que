@@ -1,0 +1,177 @@
+//heirarchical inheritace question
+#include<iostream>
+#include<string>
+using namespace std;
+class staff
+{
+	protected:
+	string name;
+	public:
+		void getnamestaff(void);
+};
+void staff::getnamestaff()
+{
+	cout<<"enter the name of the staff member"<<endl;
+	getline(cin,name);
+	cout<<"the name of the staff is "<<name;
+}
+class teacher:public staff
+{
+	private:
+	string namet;
+	string subject;
+	string publication;
+	public:
+		void getnameteacher(void);
+		void getnamesubject(void);
+		void getnamepublication(void);
+};
+void teacher::getnameteacher()
+{
+	cout<<"enter the name of the teacher"<<endl;
+	getline(cin,namet);
+}
+void teacher::getnamesubject()
+{
+	cout<<"enter the name of the subject he /she used to teach"<<endl;
+	getline(cin,subject);
+}
+void teacher::getnamepublication()
+{
+	
+	cout<<"enter the name of the publication"<<endl;
+	getline(cin,publication);
+}
+class typist:public staff
+{
+	protected:
+		int speed;
+	public:
+		void getspeed(void);
+};
+void typist::getspeed()
+{
+	cout<<"enter the speed in WPM"<<endl;
+	cin>>speed;
+}
+class officer:public staff
+{
+	private:
+	string nameo;
+	int grade;
+	
+	public:
+		void getnameofofficer(void);
+		void getgrade(void);
+};
+void officer::getnameofofficer()
+{
+	cout<<"enter the name of the officer"<<endl;
+	getline(cin,nameo);
+}
+void officer::getgrade()
+{
+	int choice;
+	cout<<"following are the grade list of officer"<<endl<<endl;
+	cout<<"1. GRADE=1(good)"<<endl;
+	cout<<"2. GRADE=2(better)"<<endl;
+	cout<<"3. GRADE=3(best)"<<endl;
+	cout<<"4. GRADE=4(excellent)"<<endl;
+	cout<<"5. GRADE=5(deadly)"<<endl;
+	cout<<"enter the grade of the officer"<<endl;
+	cin>>choice;
+	switch(choice)
+	{
+		case 1:
+			cout<<"grade 1 officer(best)"<<endl;
+		    break;
+		    
+		
+		case 2:
+			cout<<"grade 2 officer(better)"<<endl;
+		    break;
+		    
+		
+		case 3:
+			cout<<"grade 3 officer(best)"<<endl;
+		    break;
+		    
+		
+		case 4:
+			cout<<"grade 4 officer(excellent)"<<endl;
+		    break;
+		    
+		
+		case 5:
+			cout<<"grade 5 officer(deadly)"<<endl;
+		    break;
+		    
+		
+		default:
+			cout<<"wrong input"<<endl;
+		    break;
+		
+	}
+	
+	
+}
+class regular:public typist
+{
+	private:
+		int salary;
+	public:
+		void getsalary(void);
+};
+void regular::getsalary()
+{
+	cout<<"enter the salary"<<endl;
+	cin>>salary;
+}
+
+class casual:public typist
+{
+	private:
+		int csalary;
+	public:
+		void getcsalary(void);
+};
+void casual::getcsalary()
+{
+	cout<<"enter the casual salary"<<endl;
+	cin>>csalary;
+}
+int main()
+{
+teacher t;
+officer o;
+regular r;
+casual cc;
+t.getnamestaff();
+cout<<endl;
+t.getnameteacher();
+cout<<endl;
+t.getnamesubject();
+cout<<endl;
+t.getnamepublication();
+cout<<endl;
+cout<<endl;
+o.getnamestaff();
+cout<<endl;
+o.getnameofofficer();
+cout<<endl;
+o.getgrade();
+cout<<endl;
+r.getnamestaff();
+cout<<endl;
+r.getsalary();
+cout<<endl;
+r.getspeed();
+cout<<endl;
+cc.getnamestaff();
+cout<<endl;
+cc.getcsalary();
+cout<<endl;
+cc.getspeed();
+cout<<endl;
+return 0;	
+}
